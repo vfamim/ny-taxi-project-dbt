@@ -1,16 +1,22 @@
 {#
     This macro returns the description of the payment_type
 #}
+{% macro get_payment_type_description(payment_type) -%}
 
-{% MACRO get_payment_type_description(paymnent_type) -%}
+    case
+        {{ payment_type }}
+        when 1
+        then "Credit Card"
+        when 2
+        then "Cash"
+        when 3
+        then "No Charge"
+        when 4
+        then "Dispute"
+        when 5
+        then "Unknown"
+        when 6
+        then "Voided trip"
+    end
 
-    CASE {{ payment_type }}
-        WHEN 1 THEN "Credit Card"
-        WHEN 2 THEN "Cash"
-        WHEN 3 THEN "No Charge"
-        WHEN 4 THEN "Dispute"
-        WHEN 5 THEN "Unknown"
-        WHEN 6 THEN "Voided trip"
-    END
-
-{%- ENDMACRO %}
+{%- endmacro %}
