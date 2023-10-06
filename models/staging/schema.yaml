@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: iconic-era-400201
+    schema: dezoomcamp
+    tables:
+      - name: rides
+      - name: yellow_trip
