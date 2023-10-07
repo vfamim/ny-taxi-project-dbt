@@ -44,13 +44,6 @@ models:
               to: ref('taxi_zone_lookup')
               field: LocationID
               severity: warn
-      - name: dropoff_locationid
-        description: locationid where the meter was engaged.
-        tests:
-          - relationships:
-              to: ref('taxi_zone_lookup')
-              field: locationid
-              severity: warn
       - name: RateCodeID
         description: >
           The final rate code in effect at the end of the trip.
